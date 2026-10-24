@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hutama Bagass — Portofolio Siswa TKJ</title>
+    <meta name="description" content="Portofolio Hutama Bagas Aldhisa, siswa SMK Teknik Komputer Jaringan. Lihat proyek web (HTML, CSS, JavaScript, PHP) dan karya gambar saya.">
+    <meta name="keywords" content="portofolio, siswa SMK, TKJ, HTML, CSS, JavaScript, PHP, Hutama Bagas Aldhisa">
+    <meta name="author" content="Hutama Bagass">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hutamabagass.com/">
+
+    <!-- Open Graph / Facebook / WhatsApp / Discord preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hutama Bagass — Portfolio">
+    <meta property="og:title" content="Hutama Bagass — Portofolio Siswa TKJ">
+    <meta property="og:description" content="Portofolio siswa SMK Teknik Komputer Jaringan: proyek web dan karya gambar.">
+    <meta property="og:image" content="https://hutamabagass.com/gambar1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://hutamabagass.com/">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hutama Bagass — Portofolio Siswa TKJ">
+    <meta name="twitter:description" content="Portofolio siswa SMK Teknik Komputer Jaringan: proyek web dan karya gambar.">
+    <meta name="twitter:image" content="https://hutamabagass.com/gambar1.jpg">
+
+    <meta name="theme-color" content="#eef2ea" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a110c" media="(prefers-color-scheme: dark)">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="chocojjk.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@500;600;700&family=Baloo+2:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600;1,9..144,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ⚡ PRELOADER -->
+    <div class="fx-preloader" id="fxPreloader">
+        <div class="fx-preloader-inner">
+            <span class="fx-preloader-logo">Hutama<span>.</span></span>
+            <div class="fx-preloader-bar"><div class="fx-preloader-fill" id="fxPreloaderFill"></div></div>
+            <span class="fx-preloader-percent" id="fxPreloaderPercent">0%</span>
+        </div>
+    </div>
+
+    <!-- ⚡ CUSTOM CURSOR -->
+    <div class="fx-cursor-dot" id="fxCursorDot"></div>
+    <div class="fx-cursor-ring" id="fxCursorRing"></div>
+
+    <!-- ⚡ CURTAIN TRANSITION -->
+    <div class="fx-curtain" id="fxCurtain"></div>
+
+    <!-- ⚡ SIDE SCROLL-SPY NAV -->
+    <nav class="fx-side-nav" id="fxSideNav">
+        <a href="#home" class="fx-side-dot" data-label="Home"></a>
+        <a href="#about" class="fx-side-dot" data-label="About"></a>
+        <a href="#skills" class="fx-side-dot" data-label="Skills"></a>
+        <a href="#portfolio" class="fx-side-dot" data-label="Portfolio"></a>
+        <a href="#contact" class="fx-side-dot" data-label="Contact"></a>
+    </nav>
+
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgress"></div></div>
+
+    <!-- CURSOR SPOTLIGHT -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Hutama Bagass<span>.</span>
+        </div>
+
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#home" data-i18n="nav.home">Beranda</a>
+
+            <a href="#about" data-i18n="nav.about">Tentang</a>
+
+            <a href="#skills" data-i18n="nav.skills">Keahlian</a>
+
+            <a href="#portfolio" data-i18n="nav.portfolio">Portofolio</a>
+
+            <a href="#contact" data-i18n="nav.contact">Kontak</a>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon theme-icon theme-icon-moon"></i>
+                <i class="fa-solid fa-sun theme-icon theme-icon-sun"></i>
+            </button>
+
+            <button type="button" class="wallpaper-toggle" id="wallpaperToggle" aria-label="Toggle animated wallpaper" aria-pressed="false">
+                <i class="fa-solid fa-image wallpaper-icon wallpaper-icon-static"></i>
+                <i class="fa-solid fa-film wallpaper-icon wallpaper-icon-video"></i>
+            </button>
+
+            <div class="lang-switch" id="langSwitch">
+                <button type="button" class="lang-btn" data-lang="id">ID</button>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <button type="button" class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </nav>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+
+    <!-- HERO -->
+
+    <main class="hero" id="home">
+
+
+        <!-- ANIMATED WALLPAPER (toggled via the nav wallpaper button) -->
+        <video class="hero-video-bg" id="heroVideoBg" muted loop playsinline preload="none" aria-hidden="true">
+            <source src="calm.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+
+        <!-- AMBIENT FX -->
+        <div class="hero-grain"></div>
+        <div class="hero-glow glow-a"></div>
+        <div class="hero-glow glow-b"></div>
+        <canvas class="hero-stars" id="heroStars"></canvas>
+
+
+        <!-- MARQUEE BACKGROUND TEXT (scrolls sideways like a sponsor banner) -->
+
+        <div class="hero-marquee" aria-hidden="true">
+            <div class="hero-marquee-track" id="heroMarqueeTrack">
+
+                <div class="hero-marquee-group">
+                    <span class="hero-marquee-item" data-marquee-text>Hasil Gambar Saya</span>
+                    <span class="hero-marquee-item" data-marquee-text>Hasil Gambar Saya</span>
+                    <span class="hero-marquee-item" data-marquee-text>Hasil Gambar Saya</span>
+                    <span class="hero-marquee-item" data-marquee-text>Hasil Gambar Saya</span>
+                </div>
+
+                <div class="hero-marquee-group">
+                    <span class="hero-marquee-item" data-marquee-text>Hasil Gambar Saya</span>
+                    <span class="hero-marquee-item" data-marquee-text>Hasil Gambar Saya</span>
+                    <span class="hero-marquee-item" data-marquee-text>Hasil Gambar Saya</span>
+                    <span class="hero-marquee-item" data-marquee-text>Hasil Gambar Saya</span>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- INTRO CARD (Hi, I'm Tamaa) -->
+
+        <div class="intro-card">
+
+            <h1 class="intro-bgname">
+                <span class="intro-hi" data-i18n="hero.greeting">Halo, saya</span>
+                <span class="intro-name">Hutama Bagass<span class="dot">.</span></span>
+            </h1>
+
+            <div class="intro-center">
+
+                <div class="intro-photo-wrap">
+
+                    <div class="intro-photo-frame">
+                        <img src="sikma.jpeg" alt="Foto Hutama Bagass" class="intro-photo" fetchpriority="high">
+                        <div class="intro-badge"></div>
+                    </div>
+
+                    <div class="intro-side intro-side-left">
+                        <p class="intro-eyebrow" data-i18n="hero.eyebrowLeft">SELAMAT DATANG</p>
+
+                        <p class="intro-bio" data-i18n="hero.bioLeft">Halo semuanya, selamat datang di portofolio saya. Di sini Anda dapat melihat hasil karya dan proyek yang telah saya buat.</p>
+                    </div>
+
+                    <div class="intro-side intro-side-right">
+                        <p class="intro-eyebrow" data-i18n="hero.eyebrowRight">PERKENALAN</p>
+
+                        <p class="intro-bio" data-i18n="hero.bioRight">Perkenalkan, nama saya Hutama Bagas Aldhisa, siswa SMK jurusan Teknik Komputer Jaringan. Saya berharap bidang yang saya tekuni dapat terus berkembang dan bermanfaat.</p>
+                    </div>
+
+                </div>
+
+                
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- SCROLL INDICATOR -->
+
+        <div class="scroll-down">
+
+            <span data-i18n="hero.scrollDown">GULIR KE BAWAH</span>
+
+            <div class="scroll-line"></div>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================
+     ABOUT SECTION
+========================= -->
+
+<section class="about-section" id="about">
+
+   <!-- ICON KIRI ATAS -->
+<div class="about-icon icon-one">
+    <span>💻</span>
+</div>
+
+<!-- ICON KIRI BAWAH -->
+<div class="about-icon icon-two">
+    <span>🎨</span>
+</div>
+
+<!-- ICON KANAN ATAS -->
+<div class="about-icon icon-three">
+    <span>🌐</span>
+</div>
+
+<!-- ICON KANAN BAWAH -->
+<div class="about-icon icon-four">
+    <span>⚙️</span>
+</div>
+    <!-- MAIN CONTENT -->
+
+    <div class="about-center">
+
+        <p class="about-label" data-i18n="about.label">TENTANG SAYA</p>
+
+
+        <h2 data-i18n="about.heading">TENTANG SAYA</h2>
+
+
+        <p class="about-description" data-i18n="about.description">Saya adalah pribadi yang ingin terus belajar hal-hal berguna dan bermanfaat bagi banyak orang. Saya juga memiliki kemampuan dasar dalam menggambar (masih sebatas menggambar ulang) dan coding. Saya berharap dapat lebih disiplin, meskipun terkadang masih suka menunda.</p>
+
+
+        <a href="#contact" class="about-btn magnetic-btn" data-i18n="about.button">HUBUNGI SAYA</a>
+
+        <div class="stats-strip" id="statsStrip">
+
+            <div class="stat-item">
+                <span class="stat-number" data-count="1">0</span><span class="stat-plus">+</span>
+                <p data-i18n="about.stat1">Teknologi Web</p>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-number" data-count="1">0</span><span class="stat-plus">+</span>
+                <p data-i18n="about.stat2">Karya Gambar</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     SKILLS & PROCESS SECTION
+========================= -->
+
+<section class="skills-process" id="skills">
+
+    <div class="skills-grain"></div>
+
+    <div class="section-header skills-header">
+
+        <p class="eyebrow"><span>✦</span> <span data-i18n="skills.eyebrow">KEAHLIAN & PROSES</span></p>
+
+        <h2 data-i18n="skills.heading">Dari Ide hingga Hasil</h2>
+
+        <p class="skills-intro" data-i18n="skills.intro">Setiap proyek dikerjakan secara bertahap, mulai dari memahami kebutuhan hingga menghasilkan karya yang dapat digunakan.</p>
+
+    </div>
+
+
+    <!-- TOOLS -->
+
+    <div class="tools-block">
+
+        <p class="small-title tools-label" data-i18n="skills.toolsLabel">KEAHLIAN YANG SAYA KUASAI</p>
+
+        <div class="tools-row">
+
+            <div class="tool-chip">
+                <span class="tool-icon">🌐</span>
+                <span data-i18n="skills.tool1">HTML</span>
+            </div>
+
+            <div class="tool-chip">
+                <span class="tool-icon">🎨</span>
+                <span data-i18n="skills.tool2">CSS</span>
+            </div>
+
+            <div class="tool-chip">
+                <span class="tool-icon">⚡</span>
+                <span data-i18n="skills.tool3">JavaScript</span>
+            </div>
+
+            <div class="tool-chip">
+                <span class="tool-icon">🐘</span>
+                <span data-i18n="skills.tool4">PHP</span>
+            </div>
+
+            <div class="tool-chip">
+                <span class="tool-icon">✏️</span>
+                <span data-i18n="skills.tool5">Menggambar</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROCESS STRIP -->
+
+    <div class="process-strip">
+
+        <div class="process-step">
+            <span class="process-ring">01</span>
+            <h3 data-i18n="skills.process1Title">Analisis Kebutuhan</h3>
+            <p data-i18n="skills.process1Desc">Memahami tujuan dan kebutuhan proyek sebelum mulai mengerjakan.</p>
+        </div>
+
+        <div class="process-step">
+            <span class="process-ring">02</span>
+            <h3 data-i18n="skills.process2Title">Perancangan</h3>
+            <p data-i18n="skills.process2Desc">Menyusun struktur, tampilan, dan alur kerja secara terencana.</p>
+        </div>
+
+        <div class="process-step">
+            <span class="process-ring">03</span>
+            <h3 data-i18n="skills.process3Title">Pengembangan</h3>
+            <p data-i18n="skills.process3Desc">Menuliskan kode menggunakan HTML, CSS, JavaScript, dan PHP.</p>
+        </div>
+
+        <div class="process-step">
+            <span class="process-ring">04</span>
+            <h3 data-i18n="skills.process4Title">Pengujian</h3>
+            <p data-i18n="skills.process4Desc">Memeriksa dan memperbaiki hasil agar berfungsi dengan baik.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+
+    <section id="portfolio" class="portfolio section">
+
+        <div class="portfolio-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    <span>✦</span> <span data-i18n="portfolio.eyebrow">PROYEK & KARYA</span>
+                </p>
+
+                <h2 data-i18n="portfolio.heading">Portofolio</h2>
+
+            </div>
+
+            <p class="portfolio-small-text" data-i18n="portfolio.smallText">Pilih karya lalu klik gambar untuk melihat detailnya.</p>
+
+        </div>
+
+        <!-- MENU KATEGORI (sesuai tema karya) -->
+
+        <div class="portfolio-category-menu" id="categoryMenu" role="tablist" aria-label="Kategori karya"></div>
+
+        <!-- PORTFOLIO VIEW TOGGLE -->
+
+        <div class="portfolio-view-toggle" id="portfolioViewToggle" role="tablist">
+
+            <button type="button" class="view-toggle-btn active" data-view="slider" role="tab" aria-selected="true">
+                <i class="fa-solid fa-images"></i>
+                <span data-i18n="portfolio.viewSlider">Slider</span>
+            </button>
+
+            <button type="button" class="view-toggle-btn" data-view="grid" role="tab" aria-selected="false">
+                <i class="fa-solid fa-table-cells-large"></i>
+                <span data-i18n="portfolio.viewGrid">Grid</span>
+            </button>
+
+        </div>
+
+
+        <!-- PORTFOLIO SLIDER / CHARACTER SELECT -->
+
+        <div class="portfolio-slider" id="portfolioSliderView">
+
+            <button class="slider-btn prev" id="prevBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+
+            <div class="art-display">
+
+                <div class="char-stage">
+
+                    <div class="stage-glow"></div>
+
+                    <div class="ghost-card ghost-left">
+                        <img id="ghostLeftImg" src="gambar3.jpg" alt="" loading="lazy">
+                    </div>
+
+                    <div class="ghost-card ghost-right">
+                        <img id="ghostRightImg" src="gambar2.jpg" alt="" loading="lazy">
+                    </div>
+
+                    <div class="character-select-frame">
+
+                        <div class="hud-tick tick-top"></div>
+                        <div class="hud-tick tick-bottom"></div>
+
+                        <div class="frame-corner tl"></div>
+                        <div class="frame-corner tr"></div>
+                        <div class="frame-corner bl"></div>
+                        <div class="frame-corner br"></div>
+
+                        <div class="frame-glare" id="frameGlare"></div>
+
+                        <div class="art-viewer" id="artImage">
+
+                            <span id="projectNumber" class="project-number">
+                                01 / 05
+                            </span>
+
+                            <img
+                                id="currentImage"
+                                src="gambar1.jpg"
+                                alt="Karya">
+
+                            <div class="scan-sweep"></div>
+
+                            <div class="image-overlay">
+
+                                <span data-i18n="portfolio.clickExplore">Lihat detail</span>
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stage-pedestal"></div>
+
+                </div>
+
+
+                <div class="art-info">
+
+                    <h3 id="projectName">
+                        Karya Saya
+                    </h3>
+
+                    <p id="projectDescription">
+                      Berikut sebagian karya yang telah saya buat. Klik gambar untuk melihat detailnya.
+                    </p>
+
+                </div>
+
+
+                <!-- CHARACTER SELECT ROSTER -->
+
+                <div class="char-select-strip" id="charStrip"></div>
+
+            </div>
+
+
+
+            <button class="slider-btn next" id="nextBtn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+        <!-- PORTFOLIO GRID GALLERY (alternate view) -->
+
+        <div class="portfolio-grid" id="portfolioGridView" hidden></div>
+
+    </section>
+
+
+
+    <!-- ================= DETAIL KARYA ================= -->
+
+    <section id="detail" class="detail section">
+
+        <button class="back-btn" id="backBtn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span data-i18n="detail.backBtn">Kembali ke Portofolio</span>
+
+        </button>
+
+
+        <div class="detail-grid">
+
+            <div class="detail-image">
+
+                <div class="holo-floor"></div>
+
+                <div class="holo-ambient"></div>
+
+                <div class="holo-particles">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="holo-frame">
+
+                    <div class="holo-corner tl"></div>
+                    <div class="holo-corner tr"></div>
+                    <div class="holo-corner bl"></div>
+                    <div class="holo-corner br"></div>
+
+                    <img
+                        id="detailImage"
+                        src="gambar1.jpg"
+                        alt="Detail karya"
+                        loading="lazy">
+
+                </div>
+
+                <div class="holo-ring"></div>
+
+            </div>
+
+
+            <div class="detail-content">
+
+                <p class="eyebrow">
+                    <span>✦</span> <span data-i18n="detail.eyebrow">DETAIL KARYA</span>
+                </p>
+
+                <h2 id="detailTitle">
+                  Karya Saya
+                </h2>
+
+
+                <p class="detail-description" id="detailDescription">
+
+                    Deskripsi karya akan muncul di sini.
+
+                </p>
+
+
+                <div class="message-from-art">
+
+                    <p class="small-title" data-i18n="detail.messageFromArtTitle">CATATAN KARYA</p>
+
+                    <p id="artMessage">
+                        Pesan dan cerita dari gambar ini akan muncul
+                        di sini.
+                    </p>
+
+                </div>
+
+
+                <!-- RATING -->
+
+                <div class="rating-box">
+
+                    <p class="small-title" data-i18n="detail.ratingBoxTitle">BERI PENILAIAN</p>
+
+                    <div class="stars" id="stars">
+
+                        <i class="fa-regular fa-star" data-rating="1"></i>
+                        <i class="fa-regular fa-star" data-rating="2"></i>
+                        <i class="fa-regular fa-star" data-rating="3"></i>
+                        <i class="fa-regular fa-star" data-rating="4"></i>
+                        <i class="fa-regular fa-star" data-rating="5"></i>
+
+                    </div>
+
+                    <p class="rating-text" id="ratingText" data-i18n="detail.noRating">Belum ada penilaian</p>
+
+                </div>
+
+
+                <!-- PESAN -->
+
+                <div class="portfolio-message">
+
+                    <label data-i18n="detail.portfolioMessageLabel">Komentar atau masukan</label>
+
+                    <textarea
+                        id="artComment"
+                        placeholder="Tulis pendapat atau pesan tentang karya ini..."
+                        data-i18n-placeholder="detail.commentPlaceholder"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- KIRIM -->
+
+                <div class="send-rating">
+
+                    <button id="sendWhatsApp" class="send-btn whatsapp">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        <span data-i18n="detail.sendWhatsapp">Kirim via WhatsApp</span>
+
+                    </button>
+
+
+                    <button id="sendEmail" class="send-btn email">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span data-i18n="detail.sendEmail">Kirim via Gmail</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-small-text">
+        <span data-i18n="contact.smallText1">KONTAK</span>
+        <span data-i18n="contact.smallText2">TERBUKA UNTUK KOLABORASI</span>
+    </div>
+
+
+    <div class="contact-content">
+
+        <p class="contact-label" data-i18n="contact.label">PUNYA PERTANYAAN ATAU PROYEK?</p>
+
+        <h2>
+            Mari berdiskusi
+            <span>dan bekerja sama.</span>
+        </h2>
+
+        <p class="contact-description" data-i18n="contact.description">Silakan isi formulir di bawah ini atau hubungi saya langsung melalui email.</p>
+
+
+       
+
+        <!-- CONTACT FORM -->
+
+        <form class="contact-form" id="contactForm">
+
+            <div class="form-row">
+
+                <div class="form-field">
+                    <label for="cf-name" data-i18n="contact.nameLabel">NAMA</label>
+                    <input type="text" id="cf-name" name="name" placeholder="Your name" data-i18n-placeholder="contact.namePlaceholder" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="cf-email" data-i18n="contact.emailLabel">EMAIL</label>
+                    <input type="email" id="cf-email" name="email" placeholder="you@email.com" data-i18n-placeholder="contact.emailPlaceholder" required>
+                </div>
+
+            </div>
+
+            <div class="form-field">
+                <label for="cf-message" data-i18n="contact.messageLabel">PESAN</label>
+                <textarea id="cf-message" name="message" rows="4" placeholder="Tell me a little about your idea or project..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+            </div>
+
+            <button type="submit" class="contact-form-btn magnetic-btn">
+                <span data-i18n="contact.sendButton">KIRIM PESAN</span>
+                <div>↗</div>
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- DECORATION -->
+
+    <div class="contact-drawing contact-pencil">
+        💻
+    </div>
+
+    <div class="contact-drawing contact-palette">
+        🎨
+    </div>
+
+</section>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <p class="footer-label" data-i18n="footer.brandLabel">PORTOFOLIO HUTAMA BAGAS</p>
+
+            <h2>
+                Terima kasih
+                <span>telah berkunjung.<svg class="footer-squiggle" viewBox="0 0 240 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 16 Q 20 4, 38 16 T 74 16 T 110 16 T 146 16 T 182 16 T 218 16" />
+                </svg></span>
+            </h2>
+
+        </div>
+
+
+        <div class="footer-social">
+
+            <p data-i18n="footer.findMeOnline">TEMUKAN SAYA DI</p>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/hutamaa__?exln=MWUxMXJ1bWE5NDRwNw==" target="_blank" rel="noopener" class="social-btn social-ig" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@htamaabgs?_r=1&_t=ZS-9AlrA42099Z" target="_blank" rel="noopener" class="social-btn social-tt" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
+                </a>
+                <a href="https://wa.me/6285220245410" target="_blank" rel="noopener" class="social-btn social-wa" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Hutama Bagass
+        </p>
+
+        <a href="#home" class="back-top" data-i18n="footer.backToTop">KEMBALI KE ATAS ↑</a>
+
+    </div>
+
+</footer>
+
+
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div class="toast-stack" id="toastStack"></div>
+
+    <!-- FLOATING QUICK ACTIONS -->
+    <div class="float-actions">
+        <a href="https://wa.me/6285220245410" target="_blank" class="float-btn float-whatsapp" aria-label="Chat WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="float-tooltip" data-i18n="float.whatsapp">Hubungi via WhatsApp</span>
+        </a>
+        <button type="button" class="float-btn float-top" id="floatTopBtn" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+            <span class="float-tooltip" data-i18n="float.top">Kembali ke atas</span>
+        </button>
+    </div>
+
+ <script src="script.js"></script>
+
+
+</body>

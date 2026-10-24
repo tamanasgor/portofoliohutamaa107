@@ -1,0 +1,17 @@
+{
+  "name": "Hutama Bagass — Portfolio",
+  "short_name": "Bagass",
+  "description": "Illustration, character design, comics, and playful web experiments.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0b0f",
+  "theme_color": "#0b0b0f",
+  "icons": [
+    {
+      "src": "chocojjk.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
