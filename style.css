@@ -6269,3 +6269,59 @@ html[data-theme="dark"] {                 /* mode gelap */
     --accent-text: #7ef5a0;
 }
 .about-center h2 { text-shadow: none; }   /* hapus glow biar huruf tajam */
+
+
+
+/* =========================================================
+   PORTFOLIO: pindah foto dengan klik gambar kiri / kanan
+   (tombol panah hanya tampil di layar kecil, karena di sana
+   gambar samping disembunyikan)
+   ========================================================= */
+
+.ghost-card {
+    cursor: pointer;
+    transition:
+        opacity 0.4s ease,
+        filter 0.4s ease,
+        transform 0.4s ease;
+}
+
+.ghost-card:hover,
+.ghost-card:focus-visible {
+    opacity: 0.95 !important;
+    filter: saturate(1) brightness(0.95) !important;
+    outline: none;
+}
+
+.ghost-left:hover,
+.ghost-left:focus-visible {
+    transform: translateY(-50%) rotateY(22deg) scale(0.92);
+}
+
+.ghost-right:hover,
+.ghost-right:focus-visible {
+    transform: translateY(-50%) rotateY(-22deg) scale(0.92);
+}
+
+.ghost-card:active {
+    filter: saturate(1) brightness(1.1) !important;
+}
+
+@media (min-width: 851px) {
+
+    .portfolio-slider {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .portfolio-slider .slider-btn {
+        display: none;
+    }
+
+}
+
+
+/* geser kiri/kanan di foto portofolio, scroll atas/bawah tetap jalan */
+.character-select-frame,
+#artImage {
+    touch-action: pan-y;
+}

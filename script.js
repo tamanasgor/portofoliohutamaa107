@@ -1019,6 +1019,102 @@ document
 
 
 
+/* KLIK GAMBAR SAMPING (kiri = sebelumnya, kanan = berikutnya) */
+
+function goToNext() {
+    document.getElementById("nextBtn").click();
+}
+
+function goToPrev() {
+    document.getElementById("prevBtn").click();
+}
+
+[
+    { selector: ".ghost-left",  action: goToPrev },
+    { selector: ".ghost-right", action: goToNext }
+].forEach(({ selector, action }) => {
+
+    const card = document.querySelector(selector);
+
+    if (!card) return;
+
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+
+    card.addEventListener("click", action);
+
+    card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            action();
+        }
+    });
+
+});
+
+
+
+/* GESER (SWIPE) KIRI / KANAN DI HP */
+
+(function () {
+
+    const swipeFrame =
+    document.querySelector(".character-select-frame");
+
+    if (!swipeFrame) return;
+
+    let startX = 0;
+    let startY = 0;
+    let swiped = false;
+
+    swipeFrame.addEventListener("touchstart", (e) => {
+
+        const t = e.changedTouches[0];
+
+        startX = t.clientX;
+        startY = t.clientY;
+        swiped = false;
+
+    }, { passive: true });
+
+    swipeFrame.addEventListener("touchend", (e) => {
+
+        const t = e.changedTouches[0];
+
+        const dx = t.clientX - startX;
+        const dy = t.clientY - startY;
+
+        /* harus geseran horizontal yang cukup jauh */
+
+        if (Math.abs(dx) < 50) return;
+        if (Math.abs(dx) < Math.abs(dy) * 1.5) return;
+
+        swiped = true;
+
+        if (dx < 0) {
+            goToNext();   /* geser ke kiri  -> foto berikutnya */
+        } else {
+            goToPrev();   /* geser ke kanan -> foto sebelumnya */
+        }
+
+    }, { passive: true });
+
+    /* setelah geser, jangan ikut membuka halaman detail */
+
+    swipeFrame.addEventListener("click", (e) => {
+
+        if (swiped) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            swiped = false;
+        }
+
+    }, true);
+
+})();
+
+
+
 /* ======================
    3D TILT + GLARE EFFECT
 ====================== */
@@ -1727,7 +1823,7 @@ if (heroStarsCanvas && !prefersReducedMotion) {
 
     const hoverSelector =
         "a, button, .magnetic-btn, .slider-btn, .send-btn, .char-thumb, " +
-        ".art-image, .floating-art, .fx-side-dot, input, textarea, .tool-chip";
+        ".art-image, .ghost-card, .floating-art, .fx-side-dot, input, textarea, .tool-chip";
 
     document.addEventListener("mouseover", (e) => {
 
